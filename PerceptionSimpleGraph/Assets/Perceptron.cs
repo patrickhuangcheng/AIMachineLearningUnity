@@ -79,7 +79,7 @@ public class Perceptron : MonoBehaviour {
 			{
 				UpdateWeights(t);
 				Debug.Log("W1: " + (weights[0]) + "W2: " + (weights[1]) + "B: " + bias);
-			}
+            }
 		}
 
 	}
@@ -99,8 +99,10 @@ public class Perceptron : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		DrawAllPoints();
-		Train(200);
-		sg.DrawRay((float)(-(bias/weights[1])/(bias/weights[0])), (float)(-bias/weights[1]), Color.red);
+// 		Train(200);
+        Train(5);
+
+        sg.DrawRay((float)(-(bias/weights[1])/(bias/weights[0])), (float)(-bias/weights[1]), Color.red);
 		
 		if(CalcOutput(0.3,0.9) == 0)
 			sg.DrawPoint(0.3f, 0.9f, Color.red);
